@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 3b8696769fd7a214890ee26b6b768f58
+  - enabled: 1
     path: Assets/Scenes/HomeScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/OperatorScene.unity
+    guid: fc02512ff33e84742bfe8046bb6f79d1
+  - enabled: 1
+    path: Assets/Scenes/SquadsScene.unity
+    guid: 9fc384bda9b84fa40a3b161377ab578e
+  - enabled: 1
+    path: Assets/Scenes/OperatorDetailScene.unity
+    guid: b3dc4e780bc78434ba5d0ebb5c68ac28
+  - enabled: 1
+    path: Assets/Scenes/GachaScene.unity
+    guid: d270adbe51e6ead489f3ce3656b4d0e3
+  - enabled: 1
+    path: Assets/Scenes/GachaResultScene.unity
+    guid: 158e04ef940f5ff41856940d5c9b322c
   m_configObjects: {}
