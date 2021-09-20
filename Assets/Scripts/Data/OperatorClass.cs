@@ -14,15 +14,17 @@ public class OperatorClass
     public int attack;
     public int cost;
     public string img_name;
+    public int weight;
 
     public void SetProperty(OperatorClass op){
-        op_code = op.op_code;
-        name = op.name;
-        rare = op.rare;
-        rank = op.rank;
-        level = op.level;
-        attack = op.attack;
-        cost = op.cost;
-        img_name = op.img_name;
+        this.op_code = op.op_code;
+        this.name = op.name;
+        this.rare = op.rare;
+        this.rank = op.rank;
+        this.level = op.level;
+        this.attack = op.attack;
+        this.cost = op.cost;
+        this.img_name = op.img_name;
+        this.weight = op.weight;
     }
 }

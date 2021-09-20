@@ -25,7 +25,6 @@ public class OperatorManager : MonoBehaviour
             OperatorClass op = OpList.OperatorList[i];
             Debug.Log("operator code : "+ op.op_code);
             CreateOperators(op);
-            //SetInfo(op);
         }
     }
 
@@ -36,9 +35,6 @@ public class OperatorManager : MonoBehaviour
 
         for(int i=0;i<OpList.OperatorList.Count;i++){
             OperatorClass op = OpList.OperatorList[i];
-            //Debug.Log("operator code : "+ op.op_code);
-            //CreateOperators(op);
-            //SetInfo(op);
         }
     }
 
@@ -63,12 +59,12 @@ public class OperatorManager : MonoBehaviour
 
         btn.GetComponent<SaveforBtn>().oper_info.SetProperty(op);
 
-        Debug.Log("op_code: "+ btn.GetComponent<SaveforBtn>().oper_info.op_code);
-        Debug.Log("op_name: "+ btn.GetComponent<SaveforBtn>().oper_info.name);
-        Debug.Log("op_rare: "+ btn.GetComponent<SaveforBtn>().oper_info.rare);
-        Debug.Log("op_rank: "+ btn.GetComponent<SaveforBtn>().oper_info.rank);
-        Debug.Log("op_level: "+ btn.GetComponent<SaveforBtn>().oper_info.level);
-        Debug.Log("op_attack: "+ btn.GetComponent<SaveforBtn>().oper_info.attack);
-        Debug.Log("op_cost: "+ btn.GetComponent<SaveforBtn>().oper_info.cost);
+        // Debug.Log("op_code: "+ btn.GetComponent<SaveforBtn>().oper_info.op_code);
+        // Debug.Log("op_name: "+ btn.GetComponent<SaveforBtn>().oper_info.name);
+        // Debug.Log("op_rare: "+ btn.GetComponent<SaveforBtn>().oper_info.rare);
+        // Debug.Log("op_rank: "+ btn.GetComponent<SaveforBtn>().oper_info.rank);
+        // Debug.Log("op_level: "+ btn.GetComponent<SaveforBtn>().oper_info.level);
+        // Debug.Log("op_attack: "+ btn.GetComponent<SaveforBtn>().oper_info.attack);
+        // Debug.Log("op_cost: "+ btn.GetComponent<SaveforBtn>().oper_info.cost);
     }
 }

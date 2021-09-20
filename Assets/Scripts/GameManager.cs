@@ -10,8 +10,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance; // singleton
-    static OperatorClass _selected;
-    //OwnOperatorList OpList;
+    //static OperatorClass _selected;
+    public OperatorPull PullList;
 
 
     public static GameManager Instance{
@@ -30,7 +30,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        
+        PullList = LoadJsonFile<OperatorPull>(Application.dataPath,"Scripts/Data/AllOperatorList");
+        for(int i=0;i<PullList.AllOperatorList.Count;i++){
+            Debug.Log("<PullList> operator code: "+ PullList.AllOperatorList[i].op_code);
+        }
     }
 
     private void Awake(){
