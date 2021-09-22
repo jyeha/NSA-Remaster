@@ -31,12 +31,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+        // Load All Operator List
         PullList = LoadJsonFile<OperatorPull>(Application.dataPath,"Scripts/Data/AllOperatorList");
-        for(int i=0;i<PullList.AllOperatorList.Count;i++){
-            Debug.Log("<PullList> operator code: "+ PullList.AllOperatorList[i].op_code);
-        }
-        //UserData = LoadJsonFile<UserClass>(Application.dataPath,"Scripts/Data/UserData");
-        //Debug.Log(UserData.ID);
     }
 
     private void Awake(){

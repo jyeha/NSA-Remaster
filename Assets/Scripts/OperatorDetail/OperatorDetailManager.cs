@@ -24,8 +24,6 @@ public class OperatorDetailManager : MonoBehaviour
     {
         gamemanager = GameObject.Find("GameManager");
         select = GameObject.FindWithTag("Selected");
-        
-        //btn.GetComponent<SaveforBtn>().oper_info.SetProperty(op);
 
         SetScreen();
         GameObject.Destroy(select);
