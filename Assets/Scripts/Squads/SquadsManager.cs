@@ -216,79 +216,14 @@ public class SquadsManager : MonoBehaviour
     }
 
     public void PutinSquads(){
-        if(current == 1){
-            if(current_block_num == 0){
-                deck[0].deck_member.RemoveAt(0);
-                deck[0].deck_member.Insert(0, selected_info);
-            }
-            else if(current_block_num == 1){
-                deck[0].deck_member.RemoveAt(1);
-                deck[0].deck_member.Insert(1, selected_info);
-            }   
-            else if(current_block_num == 2){
-                deck[0].deck_member.RemoveAt(2);
-                deck[0].deck_member.Insert(2, selected_info);
-            }   
-            else{
-                deck[0].deck_member.RemoveAt(3);
-                deck[0].deck_member.Insert(3, selected_info);
-            }   
+        int tmp = current-1;
+        if(deck[current-1].deck_member[current_block_num] != null){
+            deck[current-1].deck_member.RemoveAt(current_block_num);
         }
-        else if(current == 2){
-            if(current_block_num == 0){
-                deck[1].deck_member.RemoveAt(0);
-                deck[1].deck_member.Insert(0, selected_info);
-            }
-            else if(current_block_num == 1){
-                deck[1].deck_member.RemoveAt(1);
-                deck[1].deck_member.Insert(1, selected_info);
-            }   
-            else if(current_block_num == 2){
-                deck[1].deck_member.RemoveAt(2);
-                deck[1].deck_member.Insert(2, selected_info);
-            }   
-            else{
-                deck[1].deck_member.RemoveAt(3);
-                deck[1].deck_member.Insert(3, selected_info);
-            }   
-        }
-            else if(current == 3){
-            if(current_block_num == 0){
-                deck[2].deck_member.RemoveAt(0);
-                deck[2].deck_member.Insert(0, selected_info);
-            }
-            else if(current_block_num == 1){
-                deck[2].deck_member.RemoveAt(1);
-                deck[2].deck_member.Insert(1, selected_info);
-            }   
-            else if(current_block_num == 2){
-                deck[2].deck_member.RemoveAt(2);
-                deck[2].deck_member.Insert(2, selected_info);
-            }   
-            else{
-                deck[2].deck_member.RemoveAt(3);
-                deck[2].deck_member.Insert(3, selected_info);
-            }   
-        }
-        else{
-            if(current_block_num == 0){
-                deck[3].deck_member.RemoveAt(0);
-                deck[3].deck_member.Insert(0, selected_info);
-            }
-            else if(current_block_num == 1){
-                deck[3].deck_member.RemoveAt(1);
-                deck[3].deck_member.Insert(1, selected_info);
-            }   
-            else if(current_block_num == 2){
-                deck[3].deck_member.RemoveAt(2);
-                deck[3].deck_member.Insert(2, selected_info);
-            }   
-            else{
-                deck[3].deck_member.RemoveAt(3);
-                deck[3].deck_member.Insert(3, selected_info);
-            }   
-        }
-        
+        deck[current-1].deck_member.Insert(current_block_num, selected_info);
+
+        // if deck.deck_member.Count < 4
+        // 앞에 none 값을 넣어야...겠는데        
 
         DeckSetting();
         ClosePopup();
