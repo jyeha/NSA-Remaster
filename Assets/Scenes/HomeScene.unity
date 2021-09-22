@@ -345,6 +345,7 @@ MonoBehaviour:
   gacha: {fileID: 1196195983}
   shop: {fileID: 1743695447}
   banner: {fileID: 334714774}
+  assistant_image: {fileID: 1112175352}
 --- !u!4 &373886239
 Transform:
   m_ObjectHideFlags: 0
@@ -935,7 +936,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 74a83f9025b0554428ebd936e54fb0a1, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

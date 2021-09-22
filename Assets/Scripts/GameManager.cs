@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance; // singleton
     //static OperatorClass _selected;
     public OperatorPull PullList;
+    public UserClass UserData;
 
 
     public static GameManager Instance{
@@ -34,6 +35,8 @@ public class GameManager : MonoBehaviour
         for(int i=0;i<PullList.AllOperatorList.Count;i++){
             Debug.Log("<PullList> operator code: "+ PullList.AllOperatorList[i].op_code);
         }
+        //UserData = LoadJsonFile<UserClass>(Application.dataPath,"Scripts/Data/UserData");
+        //Debug.Log(UserData.ID);
     }
 
     private void Awake(){

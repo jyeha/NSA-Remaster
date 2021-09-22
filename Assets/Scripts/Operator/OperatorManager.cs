@@ -11,18 +11,19 @@ public class OperatorManager : MonoBehaviour
     public GameObject parent_panel;
     GameObject gamemanager;
     
-    OwnOperatorList OpList;
+    List<OperatorClass> OpList;
 
     // Start is called before the first frame update
     void Start()
     {
         gamemanager = GameObject.Find("GameManager");
         back.onClick.AddListener(gamemanager.GetComponent<GameManager>().GotoHome);
-        OpList = gamemanager.GetComponent<GameManager>().LoadJsonFile<OwnOperatorList>(Application.dataPath,"Scripts/Data/operatorlist");
+        //OpList = gamemanager.GetComponent<GameManager>().LoadJsonFile<OwnOperatorList>(Application.dataPath,"Scripts/Data/operatorlist");
+        OpList = gamemanager.GetComponent<GameManager>().UserData.own_op_list;
 
 
-        for(int i=0;i<OpList.OperatorList.Count;i++){
-            OperatorClass op = OpList.OperatorList[i];
+        for(int i=0;i<OpList.Count;i++){
+            OperatorClass op = OpList[i];
             Debug.Log("operator code : "+ op.op_code);
             CreateOperators(op);
         }
@@ -31,10 +32,10 @@ public class OperatorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OpList = gamemanager.GetComponent<GameManager>().LoadJsonFile<OwnOperatorList>(Application.dataPath,"Scripts/Data/operatorlist");
+        OpList = gamemanager.GetComponent<GameManager>().UserData.own_op_list;
 
-        for(int i=0;i<OpList.OperatorList.Count;i++){
-            OperatorClass op = OpList.OperatorList[i];
+        for(int i=0;i<OpList.Count;i++){
+            OperatorClass op = OpList[i];
         }
     }
 

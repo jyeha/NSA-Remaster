@@ -12,7 +12,6 @@ public class StartManager : MonoBehaviour
     void Start()
     {
         gamemanager = GameObject.Find("GameManager");
-        start.onClick.AddListener(gamemanager.GetComponent<GameManager>().GotoHome);
 
     }
 

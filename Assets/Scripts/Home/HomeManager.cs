@@ -11,6 +11,7 @@ public class HomeManager : MonoBehaviour
     public Button gacha;
     public Button shop;
     public Button banner;
+    public Image assistant_image;
     GameObject gamemanager;
 
     //public OwnOperatorList OpList;
@@ -24,13 +25,18 @@ public class HomeManager : MonoBehaviour
         squads.onClick.AddListener(gamemanager.GetComponent<GameManager>().GotoSquad);
         operators.onClick.AddListener(gamemanager.GetComponent<GameManager>().GotoOperator);
         gacha.onClick.AddListener(gamemanager.GetComponent<GameManager>().GotoGacha);
-        //OpList = gamemanager.GetComponent<GameManager>().LoadJsonFile<OwnOperatorList>(Application.dataPath,"Scripts/Data/operatorlist");
+        
 
+        SetAssistant(gamemanager.GetComponent<GameManager>().UserData.assistant);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void SetAssistant(OperatorClass assis){
+        assistant_image.sprite = Resources.Load<Sprite>("Images/Characters/" + assis.img_name);
     }
 }
