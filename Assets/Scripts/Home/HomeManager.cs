@@ -12,7 +12,11 @@ public class HomeManager : MonoBehaviour
     public Button shop;
     public Button banner;
     public Image assistant_image;
+    public Text gold_text;
+    public Text crystal_text;
+    public Text jewel_text;
     GameObject gamemanager;
+
 
     //public OwnOperatorList OpList;
 
@@ -28,6 +32,7 @@ public class HomeManager : MonoBehaviour
         
 
         SetAssistant(gamemanager.GetComponent<GameManager>().UserData.assistant);
+        SetMoney(gamemanager.GetComponent<GameManager>().UserData);
     }
 
     // Update is called once per frame
@@ -38,5 +43,15 @@ public class HomeManager : MonoBehaviour
 
     void SetAssistant(OperatorClass assis){
         assistant_image.sprite = Resources.Load<Sprite>("Images/Characters/" + assis.img_name);
+    }
+
+    void SetMoney(UserClass user){
+        int gold = user.gold;
+        int crystal = user.crystal;
+        int jewel = user.jewel;
+
+        gold_text.text = " G : " + gold.ToString();
+        crystal_text.text = " C : " + crystal.ToString();
+        jewel_text.text = " J : " + jewel.ToString();
     }
 }
