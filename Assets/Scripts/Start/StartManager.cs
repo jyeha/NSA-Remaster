@@ -31,7 +31,7 @@ public class StartManager : MonoBehaviour
         if(tempUser == null){
             Debug.Log("No User Data");
             // 신규 유저 생성
-            // 팝업 후 닉네임 입력 받기
+            SceneManager.LoadScene("NewAccountScene");
         }
         else{
             gamemanager.GetComponent<GameManager>().UserData = tempUser;

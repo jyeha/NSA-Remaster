@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HomeManager : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class HomeManager : MonoBehaviour
     public Image assistant_image;
     public Text gold_text;
     public Text crystal_text;
-    public Text jewel_text;
     GameObject gamemanager;
 
 
@@ -29,7 +29,9 @@ public class HomeManager : MonoBehaviour
         squads.onClick.AddListener(gamemanager.GetComponent<GameManager>().GotoSquad);
         operators.onClick.AddListener(gamemanager.GetComponent<GameManager>().GotoOperator);
         gacha.onClick.AddListener(gamemanager.GetComponent<GameManager>().GotoGacha);
-        
+        map.onClick.AddListener(gamemanager.GetComponent<GameManager>().GotoStageSelect);
+        banner.onClick.AddListener(gamemanager.GetComponent<GameManager>().GotoGacha);
+        shop.onClick.AddListener(MovetoShop);
 
         SetAssistant(gamemanager.GetComponent<GameManager>().UserData.assistant);
         SetMoney(gamemanager.GetComponent<GameManager>().UserData);
@@ -41,6 +43,9 @@ public class HomeManager : MonoBehaviour
         
     }
 
+    void MovetoShop(){
+        SceneManager.LoadScene("StoreScene");
+    }
     void SetAssistant(OperatorClass assis){
         assistant_image.sprite = Resources.Load<Sprite>("Images/Characters/" + assis.img_name);
     }
@@ -48,10 +53,8 @@ public class HomeManager : MonoBehaviour
     void SetMoney(UserClass user){
         int gold = user.gold;
         int crystal = user.crystal;
-        int jewel = user.jewel;
 
-        gold_text.text = " G : " + gold.ToString();
-        crystal_text.text = " C : " + crystal.ToString();
-        jewel_text.text = " J : " + jewel.ToString();
+        gold_text.text = gold.ToString();
+        crystal_text.text = crystal.ToString();
     }
 }

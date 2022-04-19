@@ -15,7 +15,9 @@ public class OperatorClass
     public int cost;
     public string img_name;
     public int weight;
-
+    public string tempSDRoute;
+    public string towerSDRoute;
+ 
     public void SetProperty(OperatorClass op){
         this.op_code = op.op_code;
         this.name = op.name;
@@ -26,5 +28,7 @@ public class OperatorClass
         this.cost = op.cost;
         this.img_name = op.img_name;
         this.weight = op.weight;
+        this.tempSDRoute = op.tempSDRoute;
+        this.towerSDRoute = op.towerSDRoute;
     }
 }

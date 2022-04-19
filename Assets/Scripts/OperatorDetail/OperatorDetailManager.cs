@@ -28,6 +28,7 @@ public class OperatorDetailManager : MonoBehaviour
         SetScreen();
         GameObject.Destroy(select);
         back.onClick.AddListener(gamemanager.GetComponent<GameManager>().GotoOperator);
+        menu.onClick.AddListener(gamemanager.GetComponent<GameManager>().GotoHome);
 
     }
 
@@ -43,8 +44,8 @@ public class OperatorDetailManager : MonoBehaviour
         Name.text = select.GetComponent<SaveforBtn>().oper_info.name;
         Level.text = "Lv. " + select.GetComponent<SaveforBtn>().oper_info.level.ToString();
         Rare.text = select.GetComponent<SaveforBtn>().oper_info.rare;
-        Attack.text = select.GetComponent<SaveforBtn>().oper_info.attack.ToString();
-        Cost.text = select.GetComponent<SaveforBtn>().oper_info.cost.ToString();
+        Attack.text = "공격력: " + select.GetComponent<SaveforBtn>().oper_info.attack.ToString();
+        Cost.text = "코스트: " + select.GetComponent<SaveforBtn>().oper_info.cost.ToString();
 
     }
 }

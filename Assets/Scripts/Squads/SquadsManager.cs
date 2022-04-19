@@ -29,12 +29,13 @@ public class SquadsManager : MonoBehaviour
     public OperatorClass selected_info;
 
     public GameObject info_panel;
+    public GameObject contextPanel;
 
     GameObject chosen_squad;
     GameObject gamemanager;
     List<DeckClass> deck;
     List<OperatorClass> OpList;
-    int current;
+    public int current;
     int current_block_num;
 
     // Start is called before the first frame update
@@ -62,12 +63,6 @@ public class SquadsManager : MonoBehaviour
         DeckSetting();
         ShowTeam1();
         ClosePopup();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void DeckSetting(){
@@ -159,6 +154,16 @@ public class SquadsManager : MonoBehaviour
 
     void OpenPopup(){
         popup_panel.SetActive(true);
+
+        Transform[] childList  = parent_panel.GetComponentsInChildren<Transform>();
+        if(childList != null){
+            for(int i=0;i<childList.Length;i++){
+                if(childList[i] != parent_panel.transform){
+                    Destroy(childList[i].gameObject);
+                }
+            }
+        }
+
         chosen_squad = EventSystem.current.currentSelectedGameObject;
         if(chosen_squad.name == "Operator1")
             current_block_num = 0;
@@ -171,6 +176,7 @@ public class SquadsManager : MonoBehaviour
 
         for(int i=0;i<OpList.Count;i++){
             OperatorClass op = OpList[i];
+            // 조건문 수정 : 덱에 있는 캐릭터가 아닌 경우만 create
             CreateOperators(op);
         }
     }
@@ -216,11 +222,18 @@ public class SquadsManager : MonoBehaviour
     }
 
     public void PutinSquads(){
-        int tmp = current-1;
-        if(deck[current-1].deck_member[current_block_num] != null){
-            deck[current-1].deck_member.RemoveAt(current_block_num);
+        if(deck[current-1].deck_member.Count > 0){
+            if(current_block_num < deck[current-1].deck_member.Count && deck[current-1].deck_member[current_block_num] != null){
+                Debug.Log("B");
+                deck[current-1].deck_member.RemoveAt(current_block_num);
+            }
         }
-        deck[current-1].deck_member.Insert(current_block_num, selected_info);
+        if(deck[current-1].deck_member.Count < 3){
+            Debug.Log("wow");
+            deck[current-1].deck_member.Add(selected_info);
+        }
+        else
+            deck[current-1].deck_member.Insert(current_block_num, selected_info);
 
         // if deck.deck_member.Count < 4
         // 앞에 none 값을 넣어야...겠는데        

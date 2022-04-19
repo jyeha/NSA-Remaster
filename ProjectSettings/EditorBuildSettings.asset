@@ -26,4 +26,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GachaResultScene.unity
     guid: 158e04ef940f5ff41856940d5c9b322c
+  - enabled: 1
+    path: Assets/Scenes/StageSelectScene.unity
+    guid: e6b72df41e5cc3e48a97b4bc16622fe5
+  - enabled: 1
+    path: Assets/Scenes/Stage1Scene.unity
+    guid: f47b4f1951a9a1f4ea4deac53077588d
+  - enabled: 1
+    path: Assets/Scenes/SquadBeforeStage.unity
+    guid: 1dcbc6720fca24b4eb92cb14f76b7e77
+  - enabled: 1
+    path: Assets/Scenes/NewAccountScene.unity
+    guid: 69b7ee39e2879974780bf1ec20941003
+  - enabled: 1
+    path: Assets/Scenes/StageResultScene.unity
+    guid: c2eb178359450df48a294ac2e9728d39
+  - enabled: 1
+    path: Assets/Scenes/StoreScene.unity
+    guid: 9e376c0be8b282b4b938886e5066599c
+  - enabled: 1
+    path: Assets/Scenes/PrologueScene.unity
+    guid: 5d436369fab48954a8916c8c754a61bc
   m_configObjects: {}

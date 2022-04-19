@@ -11,7 +11,12 @@ public class GachaManager : MonoBehaviour
     public Button oneTime;
     public Button tenTimes;
 
+    public Text goldText;
+    public Text crystalText;
+
     GameObject gamemanager;
+
+    private UserClass userdata;
     
     public int total = 0;
     public List<OperatorClass> pullResult = new List<OperatorClass>();
@@ -31,6 +36,7 @@ public class GachaManager : MonoBehaviour
             Debug.Log(pullResult[0].op_code);
             
             listObject.GetComponent<SaveGachaResult>().gacha_result = pullResult;
+            listObject.GetComponent<SaveGachaResult>().gachaType = 1;
 
             gamemanager.GetComponent<GameManager>().UserData.crystal -= 600;
 
@@ -54,6 +60,7 @@ public class GachaManager : MonoBehaviour
             }
 
             listObject.GetComponent<SaveGachaResult>().gacha_result = pullResult;
+            listObject.GetComponent<SaveGachaResult>().gachaType = 10;
 
             gamemanager.GetComponent<GameManager>().UserData.crystal -= 6000;
 
@@ -84,18 +91,21 @@ public class GachaManager : MonoBehaviour
     {
         gamemanager = GameObject.Find("GameManager");
 
+        userdata = gamemanager.GetComponent<GameManager>().UserData;
+        UISet();
+
         for(int i=0;i<gamemanager.GetComponent<GameManager>().PullList.AllOperatorList.Count;i++){
             total += gamemanager.GetComponent<GameManager>().PullList.AllOperatorList[i].weight;
         }
         
         back.onClick.AddListener(gamemanager.GetComponent<GameManager>().GotoHome);
+        menu.onClick.AddListener(gamemanager.GetComponent<GameManager>().GotoHome);
         oneTime.onClick.AddListener(ResultSelect);
         tenTimes.onClick.AddListener(ResultSelect10);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void UISet(){
+        goldText.text = userdata.gold.ToString();
+        crystalText.text = userdata.crystal.ToString();
     }
 }

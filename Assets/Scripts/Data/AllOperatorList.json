@@ -9,7 +9,9 @@
             "attack": 100,
             "cost": 5,
             "img_name": "Apple_R",
-            "weight": 18
+            "weight": 18,
+            "tempSDRoute": "Prefabs/Tower/AppleTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/AppleTowerSD"
         },
         {
             "op_code": 1,
@@ -20,7 +22,9 @@
             "attack": 200,
             "cost": 7,
             "img_name": "Apple_SR",
-            "weight": 6
+            "weight": 6,
+            "tempSDRoute": "Prefabs/Tower/AppleTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/AppleTowerSD"
         },
         {
             "op_code": 2,
@@ -31,7 +35,9 @@
             "attack": 300,
             "cost": 10,
             "img_name": "Apple_SSR",
-            "weight": 1
+            "weight": 1,
+            "tempSDRoute": "Prefabs/Tower/AppleTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/AppleTowerSD"
         },
         {
             "op_code": 3,
@@ -42,7 +48,9 @@
             "attack": 100,
             "cost": 5,
             "img_name": "Fresh_R",
-            "weight": 18
+            "weight": 18,
+            "tempSDRoute": "Prefabs/Tower/FreshTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/FreshTowerSD"
         },
         {
             "op_code": 4,
@@ -53,7 +61,9 @@
             "attack": 200,
             "cost": 7,
             "img_name": "Fresh_SR",
-            "weight": 6
+            "weight": 6,
+            "tempSDRoute": "Prefabs/Tower/FreshTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/FreshTowerSD"
         },
         {
             "op_code": 5,
@@ -64,7 +74,9 @@
             "attack": 300,
             "cost": 10,
             "img_name": "Fresh_SSR",
-            "weight": 1
+            "weight": 1,
+            "tempSDRoute": "Prefabs/Tower/FreshTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/FreshTowerSD"
         },
         {
             "op_code": 6,
@@ -75,7 +87,9 @@
             "attack": 100,
             "cost": 5,
             "img_name": "Wine_R",
-            "weight": 18
+            "weight": 18,
+            "tempSDRoute": "Prefabs/Tower/WineTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/WineTowerSD"
         },
         {
             "op_code": 7,
@@ -86,7 +100,9 @@
             "attack": 200,
             "cost": 7,
             "img_name": "Wine_SR",
-            "weight": 6
+            "weight": 6,
+            "tempSDRoute": "Prefabs/Tower/WineTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/WineTowerSD"
         },
         {
             "op_code": 8,
@@ -97,7 +113,9 @@
             "attack": 300,
             "cost": 10,
             "img_name": "Wine_SSR",
-            "weight": 1
+            "weight": 1,
+            "tempSDRoute": "Prefabs/Tower/WineTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/WineTowerSD"
         },
         {
             "op_code": 9,
@@ -108,7 +126,9 @@
             "attack": 100,
             "cost": 5,
             "img_name": "Beer_R",
-            "weight": 18
+            "weight": 18,
+            "tempSDRoute": "Prefabs/Tower/BeerTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/BeerTowerSD"
         },
         {
             "op_code": 10,
@@ -119,7 +139,9 @@
             "attack": 200,
             "cost": 7,
             "img_name": "Beer_SR",
-            "weight": 6
+            "weight": 6,
+            "tempSDRoute": "Prefabs/Tower/BeerTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/BeerTowerSD"
         },
         {
             "op_code": 11,
@@ -130,271 +152,9 @@
             "attack": 300,
             "cost": 10,
             "img_name": "Beer_SSR",
-            "weight": 1
-        },
-        {
-            "op_code": 12,
-            "name": "보드카",
-            "rare": "R",
-            "rank": 0,
-            "level": 1,
-            "attack": 100,
-            "cost": 5,
-            "img_name": "Vodka_R",
-            "weight": 18
-        },
-        {
-            "op_code": 13,
-            "name": "보드카",
-            "rare": "SR",
-            "rank": 0,
-            "level": 1,
-            "attack": 200,
-            "cost": 7,
-            "img_name": "Vodka_SR",
-            "weight": 6
-        },
-        {
-            "op_code": 14,
-            "name": "보드카",
-            "rare": "SSR",
-            "rank": 0,
-            "level": 10,
-            "attack": 300,
-            "cost": 10,
-            "img_name": "Vodka_SSR",
-            "weight": 1
-        },
-        {
-            "op_code": 15,
-            "name": "테킬라",
-            "rare": "R",
-            "rank": 0,
-            "level": 1,
-            "attack": 100,
-            "cost": 5,
-            "img_name": "Tequila_R",
-            "weight": 18
-        },
-        {
-            "op_code": 16,
-            "name": "테킬라",
-            "rare": "SR",
-            "rank": 0,
-            "level": 1,
-            "attack": 200,
-            "cost": 7,
-            "img_name": "Tequila_SR",
-            "weight": 6
-        },
-        {
-            "op_code": 17,
-            "name": "테킬라",
-            "rare": "SSR",
-            "rank": 0,
-            "level": 10,
-            "attack": 300,
-            "cost": 10,
-            "img_name": "Tequila_SSR",
-            "weight": 1
-        },
-        {
-            "op_code": 18,
-            "name": "막걸리",
-            "rare": "R",
-            "rank": 0,
-            "level": 1,
-            "attack": 100,
-            "cost": 5,
-            "img_name": "Makgeolli_R",
-            "weight": 18
-        },
-        {
-            "op_code": 19,
-            "name": "막걸리",
-            "rare": "SR",
-            "rank": 0,
-            "level": 1,
-            "attack": 200,
-            "cost": 7,
-            "img_name": "Makgeolli_SR",
-            "weight": 6
-        },
-        {
-            "op_code": 20,
-            "name": "막걸리",
-            "rare": "SSR",
-            "rank": 0,
-            "level": 10,
-            "attack": 300,
-            "cost": 10,
-            "img_name": "Makgeolli_SSR",
-            "weight": 1
-        },
-        {
-            "op_code": 21,
-            "name": "위스키",
-            "rare": "R",
-            "rank": 0,
-            "level": 1,
-            "attack": 100,
-            "cost": 5,
-            "img_name": "Whiskey_R",
-            "weight": 18
-        },
-        {
-            "op_code": 22,
-            "name": "위스키",
-            "rare": "SR",
-            "rank": 0,
-            "level": 1,
-            "attack": 200,
-            "cost": 7,
-            "img_name": "Whiskey_SR",
-            "weight": 6
-        },
-        {
-            "op_code": 23,
-            "name": "위스키",
-            "rare": "SSR",
-            "rank": 0,
-            "level": 10,
-            "attack": 300,
-            "cost": 10,
-            "img_name": "Whiskey_SSR",
-            "weight": 1
-        },
-        {
-            "op_code": 24,
-            "name": "진",
-            "rare": "R",
-            "rank": 0,
-            "level": 1,
-            "attack": 100,
-            "cost": 5,
-            "img_name": "Gin_R",
-            "weight": 18
-        },
-        {
-            "op_code": 25,
-            "name": "진",
-            "rare": "SR",
-            "rank": 0,
-            "level": 1,
-            "attack": 200,
-            "cost": 7,
-            "img_name": "Gin_SR",
-            "weight": 6
-        },
-        {
-            "op_code": 26,
-            "name": "진",
-            "rare": "SSR",
-            "rank": 0,
-            "level": 10,
-            "attack": 300,
-            "cost": 10,
-            "img_name": "Gin_SSR",
-            "weight": 1
-        },
-        {
-            "op_code": 27,
-            "name": "샴페인",
-            "rare": "R",
-            "rank": 0,
-            "level": 1,
-            "attack": 100,
-            "cost": 5,
-            "img_name": "Champagne_R",
-            "weight": 18
-        },
-        {
-            "op_code": 28,
-            "name": "샴페인",
-            "rare": "SR",
-            "rank": 0,
-            "level": 1,
-            "attack": 200,
-            "cost": 7,
-            "img_name": "Champagne_SR",
-            "weight": 6
-        },
-        {
-            "op_code": 29,
-            "name": "샴페인",
-            "rare": "SSR",
-            "rank": 0,
-            "level": 10,
-            "attack": 300,
-            "cost": 10,
-            "img_name": "Champagne_SSR",
-            "weight": 1
-        },
-        {
-            "op_code": 30,
-            "name": "화이트 와인",
-            "rare": "R",
-            "rank": 0,
-            "level": 1,
-            "attack": 100,
-            "cost": 5,
-            "img_name": "WhiteWine_R",
-            "weight": 18
-        },
-        {
-            "op_code": 31,
-            "name": "화이트 와인",
-            "rare": "SR",
-            "rank": 0,
-            "level": 1,
-            "attack": 200,
-            "cost": 7,
-            "img_name": "WhiteWine_SR",
-            "weight": 6
-        },
-        {
-            "op_code": 32,
-            "name": "화이트 와인",
-            "rare": "SSR",
-            "rank": 0,
-            "level": 10,
-            "attack": 300,
-            "cost": 10,
-            "img_name": "WhiteWine_SSR",
-            "weight": 1
-        },
-        {
-            "op_code": 33,
-            "name": "사케",
-            "rare": "R",
-            "rank": 0,
-            "level": 1,
-            "attack": 100,
-            "cost": 5,
-            "img_name": "Sake_R",
-            "weight": 18
-        },
-        {
-            "op_code": 34,
-            "name": "사케",
-            "rare": "SR",
-            "rank": 0,
-            "level": 1,
-            "attack": 200,
-            "cost": 7,
-            "img_name": "Sake_SR",
-            "weight": 6
-        },
-        {
-            "op_code": 35,
-            "name": "사케",
-            "rare": "SSR",
-            "rank": 0,
-            "level": 10,
-            "attack": 300,
-            "cost": 10,
-            "img_name": "Sake_SSR",
-            "weight": 1
+            "weight": 1,
+            "tempSDRoute": "Prefabs/Tower/BeerTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/BeerTowerSD"
         }
     ]
 }

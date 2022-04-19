@@ -6,14 +6,19 @@ TagManager:
   tags:
   - Selected
   - gachaResult
+  - waypoints
+  - TowerPoints
+  - Enemy
+  - Tower
+  - TowerPanel
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - UserUI
   - Water
   - UI
-  - 
+  - Postprocessing
   - 
   - 
   - 
@@ -42,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3108980363
     locked: 0

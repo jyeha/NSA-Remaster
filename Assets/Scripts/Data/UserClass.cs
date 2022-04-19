@@ -15,6 +15,7 @@ public class UserClass
     public OperatorClass assistant;
     public List<OperatorClass> own_op_list;
     public List<DeckClass> deck_list;
+    public item userItem;
     public int map_clear;
 
     public void SetProperty(UserClass user){
@@ -28,20 +29,23 @@ public class UserClass
         this.assistant = user.assistant;
         this.own_op_list = user.own_op_list;
         this.deck_list = user.deck_list;
+        this.userItem = user.userItem;
         this.map_clear = user.map_clear;
     }
 
     public void initUser(){
-        List<OperatorClass> temp = new List<OperatorClass>();
+        List<OperatorClass> OperatorTemp = new List<OperatorClass>();
+        List<DeckClass> deckTemp = new List<DeckClass>();
         this.ID = -1;
         this.name = "null";
         this.level = 1;
         this.exp = 0;
-        this.gold = 0;
-        this.crystal = 0;
+        this.gold = 10000;
+        this.crystal = 6000;
         this.jewel = 0;
-        //this.assistant = 1;
-        this.own_op_list = temp;
+        this.own_op_list = OperatorTemp;
+        this.deck_list = deckTemp;
+        this.userItem = new item();
         this.map_clear = 0;
     }
 }
