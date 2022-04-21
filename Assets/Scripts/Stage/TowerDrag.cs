@@ -16,8 +16,12 @@ public class TowerDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
     public Cost cost;
     public int BuildCost;
     public TowerCount tCount;
+    public GameObject ShowTowerPoint;
 
-
+    void Awake(){
+        ShowTowerPoint = GameObject.Find("ShowTowerDeployPoint");
+    }
+    
     void Start(){
         maincamera = Camera.main;
         cost = GameObject.Find("PlayerManager").GetComponent<Cost>();
@@ -30,6 +34,7 @@ public class TowerDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         tempSD = Resources.Load(gameObject.GetComponent<TowerInformation>().tempSDRoute) as GameObject;
         tempTowerSD = Instantiate(tempSD);
         isDragged = true;
+        ShowTowerPoint.SetActive(true);
     }
 
     void IDragHandler.OnDrag(PointerEventData eventData){
@@ -64,6 +69,7 @@ public class TowerDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
         }
         isDragged = false;
+        ShowTowerPoint.SetActive(false);
     }
 
     void DataSetUp(GameObject TowerSD, GameObject obj, Tile ownerTile){

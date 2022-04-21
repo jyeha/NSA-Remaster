@@ -27,7 +27,7 @@ public class StartManager : MonoBehaviour
 
     public void Load_UserData(){
         UserClass tempUser;
-        tempUser = gamemanager.GetComponent<GameManager>().LoadJsonFile<UserClass>(Application.dataPath,"Scripts/Data/UserData");
+        tempUser = gamemanager.GetComponent<GameManager>().LoadJsonFile<UserClass>(Application.streamingAssetsPath,"Data/UserData");
         if(tempUser == null){
             Debug.Log("No User Data");
             // 신규 유저 생성

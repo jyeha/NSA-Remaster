@@ -86,12 +86,12 @@ public class AccountCreator : MonoBehaviour
         SetEmptyDeck(user.deck_list);
         
         string userJsonStr = gamemanager.GetComponent<GameManager>().ObjectToJson(user);
-        gamemanager.GetComponent<GameManager>().CreatetoJsonFile(Application.dataPath, "Scripts/Data/UserData", userJsonStr);
+        gamemanager.GetComponent<GameManager>().CreatetoJsonFile(Application.streamingAssetsPath, "Data/UserData", userJsonStr);
     }
 
     void LoadUserData(){
         UserClass tempUser;
-        tempUser = gamemanager.GetComponent<GameManager>().LoadJsonFile<UserClass>(Application.dataPath,"Scripts/Data/UserData");
+        tempUser = gamemanager.GetComponent<GameManager>().LoadJsonFile<UserClass>(Application.streamingAssetsPath,"Data/UserData");
         gamemanager.GetComponent<GameManager>().UserData = tempUser;
     }
 }

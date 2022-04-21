@@ -63,6 +63,9 @@ public class PayButton : MonoBehaviour
         goldText.text = userData.gold.ToString();
         crystalText.text = userData.crystal.ToString();
 
+        string userJsonStr = gameManager.GetComponent<GameManager>().ObjectToJson(userData);
+        gameManager.GetComponent<GameManager>().CreatetoJsonFile(Application.streamingAssetsPath, "Data/UserData", userJsonStr);
+
         //popupPanel.SetActive(false);
 
     }

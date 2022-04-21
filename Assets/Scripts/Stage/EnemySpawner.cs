@@ -22,6 +22,7 @@ public class EnemySpawner : MonoBehaviour
     public int enemyCount;
     public int KillorArrivedEnemyCount;
     public Wave CurrentWave => currentWave;
+    public Transform HPBarsTransform;
     
     private void Start(){
         //StartCoroutine("EnemySpawn");
@@ -56,7 +57,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void ShowEnemyHPSlider(GameObject newEnemy){
         GameObject sliderClone = Instantiate(enemyHPSlider);
-        sliderClone.transform.SetParent(canvasTransform);
+        sliderClone.transform.SetParent(HPBarsTransform);
         sliderClone.transform.localScale = Vector3.one;
 
         sliderClone.GetComponent<SliderPositionSetter>().Setup(newEnemy.transform);

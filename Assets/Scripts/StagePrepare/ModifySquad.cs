@@ -121,6 +121,10 @@ public class ModifySquad : MonoBehaviour
         Teams[1].SetActive(false);
         Teams[2].SetActive(false);
         Teams[3].SetActive(false);
+        Team1Btn.GetComponent<Image>().color = new Color(150/255f, 150/255f, 150/255f);
+        Team2Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team3Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team4Btn.GetComponent<Image>().color = new Color(1, 1, 1);
         current = 1;
     }
 
@@ -129,6 +133,10 @@ public class ModifySquad : MonoBehaviour
         Teams[1].SetActive(true);
         Teams[2].SetActive(false);
         Teams[3].SetActive(false);
+        Team2Btn.GetComponent<Image>().color = new Color(150/255f, 150/255f, 150/255f);
+        Team1Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team3Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team4Btn.GetComponent<Image>().color = new Color(1, 1, 1);
         current = 2;
     }
 
@@ -137,6 +145,11 @@ public class ModifySquad : MonoBehaviour
         Teams[1].SetActive(false);
         Teams[2].SetActive(true);
         Teams[3].SetActive(false);
+
+        Team3Btn.GetComponent<Image>().color = new Color(150/255f, 150/255f, 150/255f);
+        Team1Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team2Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team4Btn.GetComponent<Image>().color = new Color(1, 1, 1);
         current = 3;
     }
 
@@ -145,6 +158,10 @@ public class ModifySquad : MonoBehaviour
         Teams[1].SetActive(false);
         Teams[2].SetActive(false);
         Teams[3].SetActive(true);
+        Team4Btn.GetComponent<Image>().color = new Color(150/255f, 150/255f, 150/255f);
+        Team1Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team2Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team3Btn.GetComponent<Image>().color = new Color(1, 1, 1);
         current = 4;
     }
 
@@ -172,8 +189,15 @@ public class ModifySquad : MonoBehaviour
 
         for(int i=0;i<OpList.Count;i++){
             OperatorClass op = OpList[i];
-            // 조건문 수정 : 덱에 있는 캐릭터가 아닌 경우만 create
-            CreateOperators(op);
+            bool isinDeck = false;            
+
+            for(int j=0;j<deck[current-1].deck_member.Count;j++){
+                if(op.op_code == deck[current-1].deck_member[j].op_code){
+                    isinDeck = true;
+                }
+            }
+            if(!isinDeck)
+                CreateOperators(op);
         }
     }
 
@@ -231,8 +255,10 @@ public class ModifySquad : MonoBehaviour
         else
             deck[current-1].deck_member.Insert(current_block_num, selected_info);
 
-        // if deck.deck_member.Count < 4
-        // 앞에 none 값을 넣어야...겠는데        
+        UserClass userInfo = gamemanager.GetComponent<GameManager>().UserData; 
+
+        string userJsonStr = gamemanager.GetComponent<GameManager>().ObjectToJson(userInfo);
+        gamemanager.GetComponent<GameManager>().CreatetoJsonFile(Application.streamingAssetsPath, "Data/UserData", userJsonStr);  
 
         DeckSetting();
         ClosePopup();

@@ -64,6 +64,9 @@ public class GetRewards : MonoBehaviour
         }
 
         userInfo.map_clear = stageInfo.stageNum;
+
+        string userJsonStr = gameManager.GetComponent<GameManager>().ObjectToJson(userInfo);
+        gameManager.GetComponent<GameManager>().CreatetoJsonFile(Application.streamingAssetsPath, "Data/UserData", userJsonStr);
         
     }
 

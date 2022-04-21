@@ -9,7 +9,9 @@ public class StagePrepareManager : MonoBehaviour
     public Button StartButton;
     public Button backButton;
     public Button homeButton;
-    
+    public GameObject toastPanel;
+    public Text toastText;
+
     [SerializeField]
     private ModifySquad modifySquad;
 
@@ -80,12 +82,34 @@ public class StagePrepareManager : MonoBehaviour
         }
 
         if(deckInfo.SelectedDeckInfo.deck_member.Count < 1) {
-            Debug.Log("편성 인원 수 부족!");
+            ShowToastMessage();
             return;
         }
 
         if(StageInfo.GetComponent<StageInfoSave>().StageNum == 1){
             SceneManager.LoadScene("Stage1Scene");
         }
+    }
+
+    public void ShowToastMessage(){
+        toastPanel.SetActive(true);
+        StartCoroutine("FadeOut");
+    }
+
+    IEnumerator FadeOut(){
+        toastText.text = "편성 인원이 부족합니다.";
+
+
+        Color c = toastPanel.GetComponent<Image>().color;
+        c.a = 0.7f;
+        toastPanel.GetComponent<Image>().color = c;
+
+        while(c.a >= 0.0f){
+            c.a -= Time.deltaTime;
+            toastPanel.GetComponent<Image>().color = c;
+            yield return null;
+        }
+        
+        toastPanel.SetActive(false);
     }
 }

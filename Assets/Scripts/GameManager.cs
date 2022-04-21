@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         // Load All Operator List
-        PullList = LoadJsonFile<OperatorPull>(Application.dataPath,"Scripts/Data/AllOperatorList");
+        PullList = LoadJsonFile<OperatorPull>(Application.streamingAssetsPath,"Data/AllOperatorList");
     }
 
     private void Awake(){
@@ -130,4 +130,9 @@ public class GameManager : MonoBehaviour
         string jsonData = Encoding.UTF8.GetString(data);
         return JsonUtility.FromJson<T>(jsonData);
     }
+
+    // public T LoadJson<T>(string fileName){
+    //     var jsonTextFile = Resources.Load<TextAsset>(fileName);
+    //     Json
+    // }  
 }

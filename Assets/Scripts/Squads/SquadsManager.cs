@@ -73,7 +73,6 @@ public class SquadsManager : MonoBehaviour
                 string objectname = "Operator"+ num.ToString();
                 OperatorClass op = temp.deck_member[j];
                 if(op==null)    continue;
-                Debug.Log("deck "+ i + " operator " + num + "op_code " + op.op_code);
                 GameObject member = Teams[i].transform.Find(objectname).gameObject;
                 Image op_img = member.transform.Find("Image").gameObject.GetComponent<Image>();
                 Text NameText = member.transform.Find("NameText").gameObject.GetComponent<Text>();
@@ -125,6 +124,10 @@ public class SquadsManager : MonoBehaviour
         Teams[1].SetActive(false);
         Teams[2].SetActive(false);
         Teams[3].SetActive(false);
+        Team1Btn.GetComponent<Image>().color = new Color(150/255f, 150/255f, 150/255f);
+        Team2Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team3Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team4Btn.GetComponent<Image>().color = new Color(1, 1, 1);
         current = 1;
     }
 
@@ -133,6 +136,10 @@ public class SquadsManager : MonoBehaviour
         Teams[1].SetActive(true);
         Teams[2].SetActive(false);
         Teams[3].SetActive(false);
+        Team2Btn.GetComponent<Image>().color = new Color(150/255f, 150/255f, 150/255f);
+        Team1Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team3Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team4Btn.GetComponent<Image>().color = new Color(1, 1, 1);
         current = 2;
     }
 
@@ -141,6 +148,11 @@ public class SquadsManager : MonoBehaviour
         Teams[1].SetActive(false);
         Teams[2].SetActive(true);
         Teams[3].SetActive(false);
+
+        Team3Btn.GetComponent<Image>().color = new Color(150/255f, 150/255f, 150/255f);
+        Team1Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team2Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team4Btn.GetComponent<Image>().color = new Color(1, 1, 1);
         current = 3;
     }
 
@@ -149,6 +161,10 @@ public class SquadsManager : MonoBehaviour
         Teams[1].SetActive(false);
         Teams[2].SetActive(false);
         Teams[3].SetActive(true);
+        Team4Btn.GetComponent<Image>().color = new Color(150/255f, 150/255f, 150/255f);
+        Team1Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team2Btn.GetComponent<Image>().color = new Color(1, 1, 1);
+        Team3Btn.GetComponent<Image>().color = new Color(1, 1, 1);
         current = 4;
     }
 
@@ -165,23 +181,35 @@ public class SquadsManager : MonoBehaviour
         }
 
         chosen_squad = EventSystem.current.currentSelectedGameObject;
-        if(chosen_squad.name == "Operator1")
+        if(chosen_squad.name == "Operator1"){
             current_block_num = 0;
-        else if(chosen_squad.name == "Operator2")
+        }
+        else if(chosen_squad.name == "Operator2"){
             current_block_num = 1;
-        else if(chosen_squad.name == "Operator3")
+        }
+        else if(chosen_squad.name == "Operator3"){
             current_block_num = 2;
-        else
+        }
+        else{
             current_block_num = 3;
+        }
 
         for(int i=0;i<OpList.Count;i++){
             OperatorClass op = OpList[i];
-            // 조건문 수정 : 덱에 있는 캐릭터가 아닌 경우만 create
-            CreateOperators(op);
+            bool isinDeck = false;            
+
+            for(int j=0;j<deck[current-1].deck_member.Count;j++){
+                if(op.op_code == deck[current-1].deck_member[j].op_code){
+                    isinDeck = true;
+                }
+            }
+            if(!isinDeck)
+                CreateOperators(op);
         }
     }
 
     void ClosePopup(){
+        ShowChosenReset();
         popup_panel.SetActive(false);
     }
 
@@ -221,22 +249,31 @@ public class SquadsManager : MonoBehaviour
         info_panel.transform.Find("CostText").gameObject.GetComponent<Text>().text = selected_info.cost.ToString();
     }
 
+    public void ShowChosenReset(){
+        info_panel.transform.Find("Image").gameObject.GetComponent<Image>().sprite = null;
+        info_panel.transform.Find("NameText").gameObject.GetComponent<Text>().text = "";
+        info_panel.transform.Find("RareText").gameObject.GetComponent<Text>().text = "";
+        info_panel.transform.Find("LevelText").gameObject.GetComponent<Text>().text = "";
+        info_panel.transform.Find("AttackText").gameObject.GetComponent<Text>().text = "";
+        info_panel.transform.Find("CostText").gameObject.GetComponent<Text>().text = "";
+    }
+
     public void PutinSquads(){
         if(deck[current-1].deck_member.Count > 0){
             if(current_block_num < deck[current-1].deck_member.Count && deck[current-1].deck_member[current_block_num] != null){
-                Debug.Log("B");
                 deck[current-1].deck_member.RemoveAt(current_block_num);
             }
         }
         if(deck[current-1].deck_member.Count < 3){
-            Debug.Log("wow");
             deck[current-1].deck_member.Add(selected_info);
         }
         else
             deck[current-1].deck_member.Insert(current_block_num, selected_info);
 
-        // if deck.deck_member.Count < 4
-        // 앞에 none 값을 넣어야...겠는데        
+        UserClass userInfo = gamemanager.GetComponent<GameManager>().UserData; 
+
+        string userJsonStr = gamemanager.GetComponent<GameManager>().ObjectToJson(userInfo);
+        gamemanager.GetComponent<GameManager>().CreatetoJsonFile(Application.streamingAssetsPath, "Data/UserData", userJsonStr);
 
         DeckSetting();
         ClosePopup();

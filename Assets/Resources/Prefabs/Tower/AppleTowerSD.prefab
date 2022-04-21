@@ -104,7 +104,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: f5c7cdb2d75080e4fbbad5e5e0ffdd56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
   isUpgraded: 0
   tempSDRoute: 
   towerSDRoute: 
+  ownerTile: {fileID: 0}
 --- !u!65 &6629569808549514688
 BoxCollider:
   m_ObjectHideFlags: 0

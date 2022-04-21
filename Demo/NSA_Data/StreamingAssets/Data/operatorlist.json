@@ -1,0 +1,148 @@
+{
+    "OperatorList": [
+        {
+            "op_code": 0,
+            "name": "참이슬 사과",
+            "rare": "R",
+            "rank": 0,
+            "level": 1,
+            "attack": 100,
+            "cost": 5,
+            "img_name": "Apple_R",
+            "tempSDRoute": "Prefabs/Tower/AppleTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/AppleTowerSD"
+        },
+        {
+            "op_code": 1,
+            "name": "참이슬 사과",
+            "rare": "SR",
+            "rank": 0,
+            "level": 1,
+            "attack": 200,
+            "cost": 7,
+            "img_name": "Apple_SR",
+            "tempSDRoute": "Prefabs/Tower/AppleTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/AppleTowerSD"
+        },
+        {
+            "op_code": 2,
+            "name": "참이슬 사과",
+            "rare": "SSR",
+            "rank": 0,
+            "level": 10,
+            "attack": 300,
+            "cost": 10,
+            "img_name": "Apple_SSR",
+            "tempSDRoute": "Prefabs/Tower/AppleTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/AppleTowerSD"
+        },
+        {
+            "op_code": 3,
+            "name": "참이슬 후레쉬",
+            "rare": "R",
+            "rank": 0,
+            "level": 1,
+            "attack": 100,
+            "cost": 5,
+            "img_name": "Fresh_R",
+            "tempSDRoute": "Prefabs/Tower/FreshTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/FreshTowerSD"
+        },
+        {
+            "op_code": 4,
+            "name": "참이슬 후레쉬",
+            "rare": "SR",
+            "rank": 0,
+            "level": 1,
+            "attack": 200,
+            "cost": 7,
+            "img_name": "Fresh_SR",
+            "tempSDRoute": "Prefabs/Tower/FreshTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/FreshTowerSD"
+        },
+        {
+            "op_code": 5,
+            "name": "참이슬 후레쉬",
+            "rare": "SSR",
+            "rank": 0,
+            "level": 10,
+            "attack": 300,
+            "cost": 10,
+            "img_name": "Fresh_SSR",
+            "tempSDRoute": "Prefabs/Tower/FreshTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/FreshTowerSD"
+        },
+        {
+            "op_code": 6,
+            "name": "와인",
+            "rare": "R",
+            "rank": 0,
+            "level": 1,
+            "attack": 100,
+            "cost": 5,
+            "img_name": "Wine_R",
+            "tempSDRoute": "Prefabs/Tower/WineTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/WineTowerSD"
+        },
+        {
+            "op_code": 7,
+            "name": "와인",
+            "rare": "SR",
+            "rank": 0,
+            "level": 1,
+            "attack": 200,
+            "cost": 7,
+            "img_name": "Wine_SR",
+            "tempSDRoute": "Prefabs/Tower/WineTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/WineTowerSD"
+        },
+        {
+            "op_code": 8,
+            "name": "와인",
+            "rare": "SSR",
+            "rank": 0,
+            "level": 10,
+            "attack": 300,
+            "cost": 10,
+            "img_name": "Wine_SSR",
+            "tempSDRoute": "Prefabs/Tower/WineTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/WineTowerSD"
+        },
+        {
+            "op_code": 9,
+            "name": "맥주",
+            "rare": "R",
+            "rank": 0,
+            "level": 1,
+            "attack": 100,
+            "cost": 5,
+            "img_name": "Beer_R",
+            "tempSDRoute": "Prefabs/Tower/BeerTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/BeerTowerSD"
+        },
+        {
+            "op_code": 10,
+            "name": "맥주",
+            "rare": "SR",
+            "rank": 0,
+            "level": 1,
+            "attack": 200,
+            "cost": 7,
+            "img_name": "Beer_SR",
+            "tempSDRoute": "Prefabs/Tower/BeerTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/BeerTowerSD"
+        },
+        {
+            "op_code": 11,
+            "name": "맥주",
+            "rare": "SSR",
+            "rank": 0,
+            "level": 10,
+            "attack": 300,
+            "cost": 10,
+            "img_name": "Beer_SSR",
+            "tempSDRoute": "Prefabs/Tower/BeerTempTowerSD",
+            "towerSDRoute": "Prefabs/Tower/BeerTowerSD"
+        }
+    ]
+}

@@ -14,6 +14,9 @@ public class GachaManager : MonoBehaviour
     public Text goldText;
     public Text crystalText;
 
+    public GameObject toastPanel;
+    public Text toastText;
+
     GameObject gamemanager;
 
     private UserClass userdata;
@@ -24,7 +27,7 @@ public class GachaManager : MonoBehaviour
 
     public void ResultSelect(){
         if(gamemanager.GetComponent<GameManager>().UserData.crystal < 600){
-            Debug.Log("크리스탈이 부족합니다.");
+            ShowToastMessage();
         }
         else{
             GameObject listObject = (GameObject)Instantiate(saveList);
@@ -33,7 +36,7 @@ public class GachaManager : MonoBehaviour
             DontDestroyOnLoad(listObject);
 
             pullResult.Add(RandomPull());
-            Debug.Log(pullResult[0].op_code);
+            //Debug.Log(pullResult[0].op_code);
             
             listObject.GetComponent<SaveGachaResult>().gacha_result = pullResult;
             listObject.GetComponent<SaveGachaResult>().gachaType = 1;
@@ -46,7 +49,7 @@ public class GachaManager : MonoBehaviour
 
     public void ResultSelect10(){
         if(gamemanager.GetComponent<GameManager>().UserData.crystal < 6000){
-            Debug.Log("크리스탈이 부족합니다.");
+            ShowToastMessage();
         }
         else{
             GameObject listObject = (GameObject)Instantiate(saveList);
@@ -56,7 +59,7 @@ public class GachaManager : MonoBehaviour
             
             for(int i=0;i<10;i++){
                 pullResult.Add(RandomPull());
-                Debug.Log(pullResult[i].op_code);
+                //Debug.Log(pullResult[i].op_code);
             }
 
             listObject.GetComponent<SaveGachaResult>().gacha_result = pullResult;
@@ -107,5 +110,28 @@ public class GachaManager : MonoBehaviour
     void UISet(){
         goldText.text = userdata.gold.ToString();
         crystalText.text = userdata.crystal.ToString();
+    }
+
+    
+    public void ShowToastMessage(){
+        toastPanel.SetActive(true);
+        StartCoroutine("FadeOut");
+    }
+
+    IEnumerator FadeOut(){
+        toastText.text = "크리스탈이 부족합니다.";
+
+
+        Color c = toastPanel.GetComponent<Image>().color;
+        c.a = 0.7f;
+        toastPanel.GetComponent<Image>().color = c;
+
+        while(c.a >= 0.0f){
+            c.a -= Time.deltaTime;
+            toastPanel.GetComponent<Image>().color = c;
+            yield return null;
+        }
+        
+        toastPanel.SetActive(false);
     }
 }

@@ -8,11 +8,13 @@ public class SliderPositionSetter : MonoBehaviour
     private Vector3 distance = Vector3.down * 40.0f;
     private Transform targetTransform;
     private RectTransform rectTransform;
+
     
     public void Setup(Transform target)
     {
         targetTransform = target;
         rectTransform = GetComponent<RectTransform>();
+
     }   
 
     // Update is called once per frame
