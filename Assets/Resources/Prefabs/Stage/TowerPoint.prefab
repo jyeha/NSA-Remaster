@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1745089533623128864}
-  - component: {fileID: 4868899640653758007}
   - component: {fileID: -3494957754041233317}
   m_Layer: 0
   m_Name: TowerPoint
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4868899640653758007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963558111317855030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e50730de72cfdb247aa99064f8bf94e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSD: {fileID: 5431659739717356350, guid: 5cc781ae77baa564e9be47c85d693aac, type: 3}
 --- !u!65 &-3494957754041233317
 BoxCollider:
   m_ObjectHideFlags: 0

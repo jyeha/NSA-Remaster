@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: TowerSD
+  m_EditorClassIdentifier: 
+  m_GroupName: TowerSD
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 903fd34a47b682d4bb429f806b2cd051
+  m_SerializeEntries:
+  - m_GUID: f5c7cdb2d75080e4fbbad5e5e0ffdd56
+    m_Address: Apple
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 0b2153f62a00617469652e250ba27a08
+    m_Address: Tower
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 0cf8200d6466d244f8fa882646083e8e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 107407ee0758aa145ae4bca9584304e4, type: 2}
+    - {fileID: 11400000, guid: 24d64b1c3772a384089d2adf9368b351, type: 2}

@@ -41,7 +41,7 @@ public class BulletFreshMove : MonoBehaviour
 
         o.GetComponent<EnemyHP>().GetDamage(damage, motherTower.transform.Find("Collider").gameObject);
 
-        float enemySpeed = o.gameObject.GetComponent<Enemy>().speed;
+        float enemySpeed = o.gameObject.GetComponent<past_Enemy>().speed;
 
         movement2D = o.GetComponent<ObjectMove>();
         movement2D.MoveSpeed = 0.5f;

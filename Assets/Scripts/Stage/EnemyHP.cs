@@ -8,7 +8,7 @@ public class EnemyHP : MonoBehaviour
     [SerializeField]
     private float maxHP, currentHP;
     private bool isDie = false;
-    private Enemy enemy;
+    private past_Enemy enemy;
     private SpriteRenderer spriteRenderer;
 
     public float MaxHP => maxHP;
@@ -18,7 +18,7 @@ public class EnemyHP : MonoBehaviour
     void Start()
     {
         currentHP = maxHP;
-        enemy = GetComponent<Enemy>();
+        enemy = GetComponent<past_Enemy>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 

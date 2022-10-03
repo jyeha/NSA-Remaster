@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Tower
   - TowerPanel
+  - Direction
   layers:
   - Default
   - TransparentFX

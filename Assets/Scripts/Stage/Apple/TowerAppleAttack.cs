@@ -27,8 +27,8 @@ public class TowerAppleAttack : MonoBehaviour
             if(EnemyList.Count == 0)    AttackTarget = null;
 
             for(int i=0;i<EnemyList.Count;i++){
-                if(EnemyList[i].GetComponent<Enemy>().RemainDistance < minDistance){
-                    minDistance = EnemyList[i].GetComponent<Enemy>().RemainDistance;
+                if(EnemyList[i].GetComponent<past_Enemy>().RemainDistance < minDistance){
+                    minDistance = EnemyList[i].GetComponent<past_Enemy>().RemainDistance;
                     AttackTarget = EnemyList[i];
                 }
                     

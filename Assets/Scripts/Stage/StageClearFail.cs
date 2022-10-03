@@ -33,33 +33,33 @@ public class StageClearFail : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerHP.CurrentHP == 0){
-            isGameOver = true;
-            GameOverPanel.SetActive(true);
-            WaitingGuide.SetActive(false);
-            InformationPanel.SetActive(false);
-        }
+    //    if(playerHP.CurrentHP == 0){
+    //        isGameOver = true;
+    //        GameOverPanel.SetActive(true);
+    //        WaitingGuide.SetActive(false);
+    //        InformationPanel.SetActive(false);
+    //    }
         
-        if(waveSystem.AllWaveOver && enemySpawner.KillorArrivedEnemyCount == waveSystem.waves[waveSystem.MaxWave-1].maxEnemyCount){
-            isGameClear = true;
-            WaitingGuide.SetActive(false);
-            InformationPanel.SetActive(false);
-        }
-        if(isGameOver && Input.GetMouseButtonDown(0)){
-            SceneManager.LoadScene("StageSelectScene");
-        }
+    //    if(waveSystem.AllWaveOver && enemySpawner.KillorArrivedEnemyCount == waveSystem.waves[waveSystem.MaxWave-1].maxEnemyCount){
+    //        isGameClear = true;
+    //        WaitingGuide.SetActive(false);
+    //        InformationPanel.SetActive(false);
+    //    }
+    //    if(isGameOver && Input.GetMouseButtonDown(0)){
+    //        SceneManager.LoadScene("StageSelectScene");
+    //    }
         
-        if(isGameClear){
-            if(playerHP.CurrentHP == playerHP.MaxHP){
-                stageInformation.GetComponent<StageInfo>().isPerfectClear = true;
-            }
-            else{
-                stageInformation.GetComponent<StageInfo>().isPerfectClear = false;
-            }
-            GameClearPanel.SetActive(true);
-            if(Input.GetMouseButtonDown(0)){
-                SceneManager.LoadScene("StageResultScene");
-            }
-        }
+    //    if(isGameClear){
+    //        if(playerHP.CurrentHP == playerHP.MaxHP){
+    //            stageInformation.GetComponent<StageInfo>().isPerfectClear = true;
+    //        }
+    //        else{
+    //            stageInformation.GetComponent<StageInfo>().isPerfectClear = false;
+    //        }
+    //        GameClearPanel.SetActive(true);
+    //        if(Input.GetMouseButtonDown(0)){
+    //            SceneManager.LoadScene("StageResultScene");
+    //        }
+    //    }
     }
 }

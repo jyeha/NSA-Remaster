@@ -47,4 +47,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PrologueScene.unity
     guid: 5d436369fab48954a8916c8c754a61bc
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: f8731c6669017844e9930f28c390d99d, type: 2}

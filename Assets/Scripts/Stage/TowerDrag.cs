@@ -1,3 +1,5 @@
+/* 우측 하단의 타워 버튼을 드래그하면 타워를 설치할 수 있음 */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,11 +28,13 @@ public class TowerDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         maincamera = Camera.main;
         cost = GameObject.Find("PlayerManager").GetComponent<Cost>();
         tCount = GameObject.Find("PlayerManager").GetComponent<TowerCount>();
+        //ShowTowerPoint = GameObject.Find("ShowTowerDeployPoint");
     }
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData){
         if(cost.CurrentCost < gameObject.GetComponent<TowerInformation>().cost) return;
         if(tCount.MaxTowerCount < tCount.towerCount+1) return;
+        
         tempSD = Resources.Load(gameObject.GetComponent<TowerInformation>().tempSDRoute) as GameObject;
         tempTowerSD = Instantiate(tempSD);
         isDragged = true;
@@ -85,6 +89,7 @@ public class TowerDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         TowerSD.GetComponent<TowerInformation>().tempSDRoute = obj.GetComponent<TowerInformation>().tempSDRoute;
         TowerSD.GetComponent<TowerInformation>().towerSDRoute = obj.GetComponent<TowerInformation>().towerSDRoute;
 
+        // ownerTile: 타일이 설치된 타일 정보
         TowerSD.GetComponent<TowerInformation>().ownerTile = ownerTile;
     }
     

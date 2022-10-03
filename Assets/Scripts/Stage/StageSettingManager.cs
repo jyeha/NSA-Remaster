@@ -1,3 +1,6 @@
+/* 스테이지에 진입하면 스테이지 정보에 따라 스테이지를 셋팅 */
+/* 유저 덱 정보에 따라 유저의 덱을 우측 하단에 출력 */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,12 +31,6 @@ public class StageSettingManager : MonoBehaviour
         ShowTowerPoint.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void DeckSetUp(DeckClass SelectedDeckInfo){
         for(int i=0;i<SelectedDeckInfo.deck_member.Count;i++){
             GameObject btn = Instantiate(TowerImage, DeckPanel.transform);
@@ -55,10 +52,8 @@ public class StageSettingManager : MonoBehaviour
 
             btn.GetComponent<TowerDrag>().ShowTowerPoint = this.ShowTowerPoint;
 
-
             btn.GetComponent<TowerDrag>().cost = playerManager.GetComponent<Cost>();
             btn.GetComponent<TowerDrag>().BuildCost = btn.GetComponent<TowerInformation>().cost;
-            //TowerImage.GetComponent<Image>().sprite = 
         }
     }
 }

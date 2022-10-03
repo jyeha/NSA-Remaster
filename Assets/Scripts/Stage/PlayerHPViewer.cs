@@ -32,9 +32,9 @@ public class PlayerHPViewer : MonoBehaviour
 
         costText.text = "Cost: " + cost.CurrentCost.ToString();
 
-        waveText.text = waveSystem.CurrentWave.ToString() + " / " + waveSystem.MaxWave.ToString();
+        //waveText.text = waveSystem.CurrentWave.ToString() + " / " + waveSystem.MaxWave.ToString();
 
-        enemyText.text = enemySpawner.KillorArrivedEnemyCount.ToString() + " / " + enemySpawner.CurrentWave.maxEnemyCount.ToString();
+        //enemyText.text = enemySpawner.KillorArrivedEnemyCount.ToString() + " / " + enemySpawner.CurrentWave.maxEnemyCount.ToString();
 
         towerText.text = "타워: " + towerCount.towerCount.ToString() + " / " + towerCount.MaxTowerCount.ToString();
     }
