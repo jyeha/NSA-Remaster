@@ -37,7 +37,7 @@
    
 ## 🎮플레이
 ### 플레이 전체 동영상
-유튜브 링크: ㅁㄹㄴ   
+유튜브 링크: [https://youtu.be/akKp31ZpJ4Y](https://youtu.be/akKp31ZpJ4Y)   
 
 **이하는 gif를 사용한 설명입니다.**
 
